@@ -4,10 +4,10 @@ import { useSelector } from 'react-redux';
 export const SinglePostPage = ({ match }) => {
   const { postId } = match.params;
 
-  const post = useSelector(state => {
-    state.posts.find(post => post.id === postId);
-  })
-
+  const post = useSelector(state => 
+    state.posts.find(post => post.id === postId)
+  );
+  console.log(postId, post);
   if (!post) {
     return (
       <section>
