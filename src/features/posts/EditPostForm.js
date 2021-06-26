@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { postUpdated } from './postsSlice';
@@ -15,7 +15,7 @@ export const EditPostForm = ({ match }) => {
   const history = useHistory()
 
   const onTitleChanged = e => setTitle(e.target.value);
-  const onContentChanged = e => setTitle(e.target.value);
+  const onContentChanged = e => setContent(e.target.value);
 
   const onSavePostClicked = () => {
     if (title && content) {
