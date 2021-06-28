@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectUserById } from './usersSlice';
+import { selectAllPosts } from '../posts/postsSlice';
 
 export const UserPage = ({ match }) => {
   const { userId } = match.params;
@@ -12,11 +13,11 @@ export const UserPage = ({ match }) => {
     return allPosts.filter(post => post.user === userId);
   });
 
-  const postTitles = postsForUser.map(post => {
+  const postTitles = postsForUser.map(post =>
     <li key={post.id}>
       <Link to={`/posts/${post.id}`}>{ post.title }</Link>
     </li>
-  });
+  );
 
   return (
     <section>
