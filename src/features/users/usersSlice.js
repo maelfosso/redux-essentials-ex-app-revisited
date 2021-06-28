@@ -14,7 +14,6 @@ const usersSlice = createSlice({
   reducers: {},
   extraReducers: {
     [fetchUsers.fulfilled]: (state, action) => {
-      console.log(state, action);
       return action.payload
     }
   }
