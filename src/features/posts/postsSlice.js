@@ -1,6 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { sub } from 'date-fns';
-import { nanoid } from '@reduxjs/toolkit';
+import { createAsyncThunk, nanoid, createSlice } from '@reduxjs/toolkit';
 import { client } from '../../api/client';
 
 const initialState = {
