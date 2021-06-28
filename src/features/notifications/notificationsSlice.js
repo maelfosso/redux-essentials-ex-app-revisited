@@ -33,7 +33,7 @@ const notificationsSlice = createSlice({
       Object.values(state.entities).forEach(notification => {
         notification.isNew = !notification.read;
       });
-      notificationsAdapter.upsertMany(...action.payload);
+      notificationsAdapter.upsertMany(state, action.payload);
     }
   }
 });
@@ -41,8 +41,6 @@ const notificationsSlice = createSlice({
 export const { allNotificationsRead } = notificationsSlice.actions;
 
 export default notificationsSlice.reducer;
-
-export const selectAllNotifications = state => state.notifications;
 
 export const {
   selectAll: selectAllNotifications
