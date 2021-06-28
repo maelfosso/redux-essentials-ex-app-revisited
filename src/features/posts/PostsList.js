@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { memo, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { PostAuthor } from './PostAuthor';
@@ -19,7 +19,7 @@ const PostExcerpt = ({ post }) => {
       </Link>
     </article>
   );
-}
+};
 
 export const PostsList = () => {
   const dispatch = useDispatch();
