@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectAllNotifications } from './notificationsSlice';
 import { selectAllUsers } from '../users/usersSlice';
-import { formatDistanceToNow } from 'date-fns';
+import { formatDistanceToNow, parseISO } from 'date-fns';
 
 export const NotificationsList = () => {
   const notifications = useSelector(selectAllNotifications);
